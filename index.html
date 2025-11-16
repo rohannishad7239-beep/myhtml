@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cricket Premium Landing Page</title>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background: url('download.jpg')
+                    no-repeat center center/cover;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    /* Dark + stadium blur overlay */
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient( rgba(0,0,0,0.75), rgba(0,0,0,0.75) );
+        backdrop-filter: blur(8px);
+    }
+
+    /* Content Box */
+    .box {
+        position: relative;
+        text-align: center;
+        color: white;
+        padding: 35px 25px;
+        width: 85%;
+        max-width: 420px;
+        background: rgba(255,255,255,0.08);
+        border-radius: 20px;
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(255,255,255,0.15);
+        box-shadow: 0 0 25px rgba(255,255,0,0.3);
+        animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(25px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+        font-size: 30px;
+        font-weight: 700;
+        background: linear-gradient(90deg, #ffdd55, #fff9c4);
+        -webkit-background-clip: text;
+        color: transparent;
+        letter-spacing: 1px;
+    }
+
+    h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: #ffeb70;
+    }
+
+    /* Premium Button */
+    .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 14px 22px;
+        background: linear-gradient(90deg, #1aff56, #00c853);
+        color: #000;
+        border-radius: 40px;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 0 15px #00ff6a;
+    }
+
+    /* Timer bubble */
+    .timer-box {
+        margin-top: 18px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: rgba(255,230,0,0.2);
+        border: 3px solid #ffe600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        font-weight: 700;
+        color: #ffe600;
+        box-shadow: 0 0 25px #ffea00;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="box">
+    <h1>CAPTAIN MAHI 😎</h1>
+    <h2>CAPTAIN MAHI • CRICKET EXPERT</h2>
+
+    <a class="btn" href="https://t.me/yourchannel">JOIN TELEGRAM CHANNEL</a>
+
+    <h2 style="margin-top:30px;">FREE JOINING ENDS IN</h2>
+    <div class="timer-box" id="timer">60</div>
+</div>
+
+<script>
+    let timeLeft = 60;
+    const timerElement = document.getElementById("timer");
+
+    const countdown = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            timerElement.textContent = "0";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
